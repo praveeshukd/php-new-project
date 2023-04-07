@@ -42,4 +42,3 @@ if ($user) {
     header('location: /');
     exit();
 }
-// check if the a;ready user exsits

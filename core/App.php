@@ -18,7 +18,7 @@ class App
 
     public static function bind($key, $resolver)
     {
-        static::container()->bind($key, $resolver);
+        return static::container()->bind($key, $resolver);
     }
 
     public static function resolve($key)

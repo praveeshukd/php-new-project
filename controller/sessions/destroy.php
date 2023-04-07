@@ -2,4 +2,5 @@
 logout();
 
 header('location:/');
+
 exit();

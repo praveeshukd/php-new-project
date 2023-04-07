@@ -7,25 +7,19 @@
             <div>
                 <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                     alt="Your Company">
-                <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Register for a new
-                    account</h2>
+                <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Reset email</h2>
             </div>
 
-            <form class="mt-8 space-y-6" action="/register" method="POST">
+            <form class="mt-8 space-y-6" action="/email/update" method="POST">
                 <div class="-space-y-px rounded-md shadow-sm">
                     <div>
                         <label for="email" class="sr-only">Email address</label>
+                   
                         <input id="email" name="email" type="email" autocomplete="email" required
                             class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                            placeholder="Email address">
+                            placeholder="email">
                     </div>
 
-                    <div>
-                        <label for="password" class="sr-only">Password</label>
-                        <input id="password" name="password" type="password" autocomplete="current-password" required
-                            class="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                            placeholder="Password">
-                    </div>
                 </div>
 
                 <div>
@@ -36,15 +30,9 @@
                 </div>
 
                 <ul>
-                    <?php if (isset($errors['email'])): ?>
+                    <?php if (isset($errors['message'])): ?>
                         <li class="text-red-500 text-xs mt-2">
-                            <?= $errors['email'] ?>
-                        </li>
-                    <?php endif; ?>
-
-                    <?php if (isset($errors['password'])): ?>
-                        <li class="text-red-500 text-xs mt-2">
-                            <?= $errors['password'] ?>
+                            <?= $errors['message'] ?>
                         </li>
                     <?php endif; ?>
                 </ul>

@@ -7,8 +7,9 @@
         <ul>
             <?php foreach ($notes as $note) : ?>
                 <li>
-                    <a href="/note?id=<?= $note['id'] ?>" class="text-blue-500 hover:underline">
-                        <?= htmlspecialchars($note['body']) ?>
+                    
+                    <a href="/note?id=<?= $note['id'] ?>" class="text-black-500 hover:underline">
+                  <?= htmlspecialchars($note['body']) ?>
                     </a>
                 </li>
             <?php endforeach; ?>
@@ -19,5 +20,6 @@
         </p>
     </div>
 </main>
+
 
 <?php require base_path('views/partials/footer.php') ?>

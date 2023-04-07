@@ -8,14 +8,15 @@
         </p>
 
         <p><?= htmlspecialchars ($note['body']) ?></p>
-
-        <!-- <form method="POST" class="mt-8">
+        
+       <footer class="mt-8">
+       <a href="/note/edit?id=<?=$note['id'] ?>" class="text-green-800 border border-current px-3 py-1 rounded">Edit</a>
+       <form method="POST" class="mt-8">
         <input type="hidden" name="_method" value="DELETE">
             <input type="hidden" name="id" value="<?=$note['id'] ?>">
         <button type="submit" class="text-green-500">Delete</button>
-        </form> -->
-       <footer class="mt-8">
-       <a href="/note/edit?id=<?=$note['id'] ?>" class="text-green-800 border border-current px-3 py-1 rounded">Edit</a>
+     
+        </form>
        </footer>
     </div>
 </main>

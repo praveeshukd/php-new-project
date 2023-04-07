@@ -11,15 +11,18 @@
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                         <a href="/"
                             class="<?= urlIs("/") ? 'bg-gray-900 text-white' : 'text-gray-300' ?> hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                            <a href="/todo"
-                            class="<?= urlIs("/todo") ? 'bg-gray-900 text-white' : 'text-gray-300' ?> hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Todo</a>
-                            <a href="/about"
+                        <a href="/todo/show"
+                            class="<?= urlIs("/todo/show") ? 'bg-gray-900 text-white' : 'text-gray-300' ?> hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Todo</a>
+                        <a href="/about"
                             class="<?= urlIs("/about") ? 'bg-gray-900 text-white' : 'text-gray-300' ?> hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+                            <a href="/product"
+                            class="<?= urlIs("/product") ? 'bg-gray-900 text-white' : 'text-gray-300' ?> hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">product</a>
                             <?php if ($_SESSION['user'] ?? false): ?>
-                        <a href="/notes"
-                            class="<?= urlIs("/notes") ? 'bg-gray-900 text-white' : 'text-gray-300' ?>  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">notes</a>
-                      <?php endif ;?>
-                            <a href="/contact"
+                            <a href="/notes"
+                                class="<?= urlIs("/notes") ? 'bg-gray-900 text-white' : 'text-gray-300' ?>  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">notes</a>
+                        <?php endif; ?>
+                        
+                        <a href="/contact"
                             class="<?= urlIs("/contact") ? 'bg-gray-900 text-white' : 'text-gray-300' ?>  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
                     </div>
 
@@ -63,13 +66,38 @@
                     </div>
                     <?php if ($_SESSION['user'] ?? false): ?>
                         <div class="ml-3">
-                     <form action="/sessions" method="POST">
-                        <input type="hidden" name="_method" value="DELETE"/>
-                        <button class="text-white bg-white-500">Log out</button>
-                     </form>
+                            <form action="/sessions" method="POST">
+                                <input type="hidden" name="_method" value="DELETE" />
+                                <button class="text-white bg-white-500">Log out</button>
+                            </form>
 
                         </div>
                     <?php endif; ?>
+                    <div class="ml-3">
+                            <form action="/reset" method="POST">
+                                <input type="hidden" name="_method" value="GET" />
+                                <button class="text-white bg-white-500">Reset Password</button>
+                            </form>
+
+                        </div>
+                        <?php if ($_SESSION['user'] ?? false): ?>
+                        <div class="ml-3">
+                            <form action="/change/email" method="POST">
+                                <input type="hidden" name="_method" value="GET" />
+                                <button class="text-white bg-white-500">change email</button>
+                            </form>
+
+                        </div>
+                        <div class="ml-3">
+                            <form action="/change/password" method="POST">
+                                <input type="hidden" name="_method" value="GET" />
+                                <button class="text-white bg-white-500">password change</button>
+                            </form>
+
+                        </div>
+                        <?php endif; ?>
+                   
+                   
                 </div>
             </div>
             <div class="-mr-2 flex md:hidden">

@@ -37,6 +37,12 @@
                         <input id="email" name="task" type="text" autocomplete="task" required
                                class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                                placeholder="Enter a task">
+                               <div>
+                               <label for="task" class="sr-only">Date</label>
+                               <input type="date">
+                               </div>
+                              
+                              
                     </div>
                     <ul>
                     <?php if (isset($errors['task'])) : ?>
@@ -49,9 +55,10 @@
                     <button type="submit"
                             class="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                     >
-                        ADD
+                        ADD 
                     </button>
-                </div>
+           
+                    </div>
 
                 
             </form>
@@ -78,7 +85,7 @@
       <td scope="row"><?=$td['id'];?></td>
       <td><?= $td['task']?></td>
       <td><?= $td['Date']?></td>
-      <td value="" class=" hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"><a href="/todo/delete?id=<?= $td['id'] ?>">Delete</a></td>
+      <td class=" hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"><a href="/todo/delete?id=<?= $td['id'] ?>">Delete</a></td>
       <td class=" hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"><a href="/todo/edit?id=<?= $td['id'] ?>">Edit</a></td>
 
     </tr>
